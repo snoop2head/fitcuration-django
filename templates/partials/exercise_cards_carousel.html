@@ -1,0 +1,33 @@
+{%if exercise.summary%}
+<!-- make card template for each grids -->
+  <article class="portfolio__item" style="background-image: url({{exercise.exercise_photo_url}})">
+    <!-- make bottom description box -->
+    <div class="item__info">
+      <!-- wrapping hyperlink for individual exercise page, for exercise name -->
+      <a href="{% url "exercises:detail" exercise.pk %}"> 
+      <div class="font-bold text-xl mb-2">{{exercise.name}}</div>
+      </a>
+      <p class="text-gray-700">
+        <!-- wrapping hyperlink for individual exercise page, for descriptions -->
+        <a href="{% url "exercises:detail" exercise.pk %}"> 
+        {{exercise.summary}}
+        </a>
+      </p>
+    </div>
+  </article>
+{%endif%}
+{%if not exercise.summary%}
+<!-- make card template for each grids -->
+  <article class="portfolio__item" style="background-image: url({{exercise.exercise_photo_url}})">
+    <!-- make bottom description box -->
+    <div class="item__info">
+      <!-- wrapping hyperlink for individual exercise page, for exercise name -->
+      <a href="{% url "exercises:detail" exercise.pk %}"> 
+      <div class="font-bold text-xl mb-2">{{exercise.name}}</div>
+      </a>
+      <p class="text-gray-700">
+      </p>
+    </div>
+</article>
+{%endif%}
+        

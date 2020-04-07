@@ -1,0 +1,28 @@
+<!-- exporting body element in base.html -->
+{% extends "base.html" %}
+
+{% block page_title %} Home {% endblock page_title %}
+
+{% block content %}
+<!-- body content -->
+<div class="container mx-auto py-0">
+    <!-- big image box with search box in it -->
+    <div class ="container mb-24 max-w-screen-xl h-50vh bg-cover bg-center flex justify-center content-center flex-wrap" style="background-image:url(https://images.unsplash.com/photo-1517166988974-5e377975dd67?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2242&q=80)">
+        {% block search-bar %}
+        <form method="get" action="{% url "exercises:search" %}" class="w-11/12 h-20 flex justify-center content-center flex-wrap">
+            <input class="search-box border rounded-sm px-5 py-2 w-full shadow-md text-sm font-medium text-gray-800 placeholder-gray-600 hover:shadow-lg outline-none" name="name" placeholder ="어떤 운동을 찾으세요?">
+        </form>
+        {% endblock search-bar %} 
+    </div>
+</div>
+<!-- make grid as a row for exercise cards -->
+<section class="portfolio">
+    {% for exercise in exercises %}
+    {% include "partials/exercise_cards_carousel.html"%}
+    {% endfor %}
+</section>
+
+<!-- footer -->
+{% include "partials/footer.html"%}
+
+{% endblock content %}

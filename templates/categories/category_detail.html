@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}
+    {{category.name}}
+{% endblock page_title %}
+
+{% block body %}
+<body>
+<header class="container max-w-full flex inset-0 items-center justify-between px-3 h-20 border-b border-gray-400 fixed bg-white">
+    <div class="flex items-center w-1/3">
+        <a href="{% url "core:home"%}" class="mr-4">
+        <img class="w-12" src="{% static 'img/gym.png'%}" >
+        </a>
+    </div>
+    {% include "partials/nav.html"%}
+</header>
+<main class="categcontent">
+    <div class="categcontent__hero mt-20" style="background-image: url({{category.category_photo_url}})">
+        <h2 class="hero__title">
+            {{category.short_name}}
+        </h2>
+    </div>
+    <section class="categcontent__blog">
+        <h3 class="categcontent__title">Category</h3>
+        <!-- exercises should be specified below -->
+        {% for one_exercise in category.exercises_in_category %}
+        <article class="post">
+            <div class="post__column">
+                <a href="{% url "exercises:detail" one_exercise.pk %}">
+                    <img src="{{one_exercise.image_url}}" alt="" class="post__image">
+                </a>
+            </div>
+            
+            <div class="post__column">
+                <a href="{% url "exercises:detail" one_exercise.pk %}">
+                <p class="post__text font-bold text-lg">{{one_exercise.name}}</p>
+                </a>
+            </div>
+            
+        </article>
+        {% endfor %}
+    </section>
+</main>
+</body>
+
+{% endblock body %} 

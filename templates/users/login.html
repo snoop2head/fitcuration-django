@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    Log in
+{% endblock page_title %}
+
+{% comment %} not inheriting search-bar from base.html {% endcomment %}
+{% block search-bar %}
+{% endblock search-bar %}
+
+{% block content %}
+<div class="container lg:w-5/12 md:w-1/2 xl:w-1/4 mx-auto my-10 flex flex-col items-center border p-6 border-gray-400">
+    {% include "users/social_login.html" %}
+
+    <!-- https://docs.djangoproject.com/en/3.0/ref/csrf/ -->
+    <form method="POST" action="{% url "users:login" %}" class="login__box">
+        {% csrf_token %}
+        <!-- .as_p is dividing into paragraphs -->
+        {{form.email}}
+        {{form.password}}
+    <button>Login</button>
+    </form>
+
+    <div class="mt-5">
+        <span class="mr-2">저희와 함께 운동하실래요?</span>
+        <a href="{% url 'users:signup' %}" class="text-teal-500 font-medium">회원가입</a>
+    </div>
+</div>
+{% endblock content%} 

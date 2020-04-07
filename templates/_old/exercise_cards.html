@@ -1,0 +1,19 @@
+
+<!-- exercise cards elements -->
+<div class="w-1/4 mb-10 px-2">
+    <div class="w-full h-64 bg-cover bg-center rounded-lg" style="background-image: url({{exercise.representing_photo_url}});"></div>
+    {%if exercise.summary%}
+            <p>
+                <a href="{% url "exercises:detail" exercise.pk %}"> {{exercise.name}} <br/>
+                    {{exercise.summary}} 
+                </a> 
+            </p>
+    {%endif%}
+            
+    {%if not exercise.summary%}
+                <p>
+                    <a href="{% url "exercises:detail" exercise.pk %}"> {{exercise.name}} <br/>
+                    </a> 
+                </p>
+    {%endif%}
+</div>

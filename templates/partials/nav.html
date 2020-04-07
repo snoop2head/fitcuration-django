@@ -1,0 +1,10 @@
+<!-- page's top right user login, logout, signout -->
+
+<ul class ="flex items-center text-sm font-medium h-full">
+    {% if user.is_authenticated %}
+        <li class="nav_link"><a href="{% url "users:logout" %}">Log Out</a></li>
+    {% else %}
+        <li class="nav_link"><a href="{% url "users:login" %}">Login</a></li>
+        <li class="nav_link"><a href="{% url "users:signup" %}">Signup</a></li>
+    {% endif %}
+</ul>

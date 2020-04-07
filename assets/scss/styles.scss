@@ -1,0 +1,320 @@
+// importing font
+@import url("https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap");
+@import "_variables";
+
+// importing tailwind
+@tailwind base;
+@tailwind components;
+
+// adding additional customization through scss
+html {
+  font: size 10px;
+  font-family: "Nanum Gothic", sans-serif;
+  height: 100%;
+}
+
+header {
+  font-family: $eng_font;
+}
+
+.box {
+  font-size: 20px;
+  .child {
+    width: 0.5rem;
+  }
+}
+
+// USED FOR EXERCISE_LIST.HTML
+.search-box {
+  transition: box-shadow 0.15s linear;
+}
+
+// USED FOR NAV.HTML
+.nav_link {
+  @apply ml-8 border-b-2 border-white h-full flex items-center;
+  a {
+    @apply py-10 px-5;
+  }
+  &:hover {
+    @apply border-gray-600;
+  }
+}
+
+// USED FOR EXERCISE_CARDS_CAROUSEL.HTML
+// make grid as a row
+.portfolio {
+  display: grid;
+  padding-left: 90px;
+  grid-template-columns: minmax(250px, 1fr);
+  grid-auto-columns: minmax(250px, 1fr);
+  grid-template-rows: 45vh;
+  grid-auto-rows: 45vh;
+  grid-auto-flow: column;
+  overflow: scroll;
+  grid-gap: 50px;
+  padding-bottom: 50px;
+  align-self: center;
+}
+
+// scroll to the right
+.portfolio::-webkit-scrollbar {
+  display: none;
+}
+
+// make card template
+.portfolio .portfolio__item {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background-size: cover;
+  border-radius: 0.5rem;
+  background-position: center center;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 38px rgba(0, 0, 0, 0.22);
+}
+
+// make bottom description box
+.portfolio__item .item__info {
+  background-color: white;
+  text-align: center;
+  border-radius: 0.5rem;
+  width: 100%;
+  height: 30%;
+  padding: 10px 0px;
+  word-break: keep-all;
+  font-size: 0.825rem;
+}
+
+// USED FOR FOOTER.HTML
+.navigation {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 0 20px;
+}
+
+.navigation__icons .navigation__icon:last-child {
+  margin-left: 10px;
+}
+
+.navigation .navigation__item--selected {
+  color: #2c2c2c;
+}
+
+// USED FOR EXERCISE_DETAIL.HTML
+// make exercise specific gallery
+.gallery {
+  background-color: $fitcuration_bg;
+  padding: 40px;
+  margin-top: -20px;
+}
+
+.gallery__wrapper,
+.content {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.gallery__wrapper {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.gallery .gallery__item {
+  height: 25vh;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  background-size: cover;
+  background-position: center;
+}
+
+.content {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 0px;
+  word-break: keep-all;
+}
+
+.content .content__column {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-rows: 1fr 3fr 1fr 1fr;
+}
+
+.content .content__link {
+  font-family: $eng_font;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: inherit;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #3498db;
+}
+
+// category specifics page
+.categcontent .categcontent__hero {
+  font-family: $eng_font;
+  height: 80vh;
+  color: white;
+  display: flex;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+  text-transform: uppercase;
+  margin-bottom: 80px;
+}
+
+.categcontent .categcontent__blog {
+  font-family: $eng_font;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.categcontent__blog .categcontent__title {
+  font-family: $eng_font;
+  text-align: center;
+  text-transform: uppercase;
+  padding-bottom: 40px;
+  border-bottom: 3px solid black;
+  display: inline-block;
+  font-size: 40px;
+  margin-bottom: 60px;
+}
+
+.post {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  place-content: center center;
+}
+
+.post .post__column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.post__image {
+  margin: 0 auto;
+  width: auto;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  min-height: 100%;
+  max-width: auto;
+}
+
+.post .post__text {
+  margin: 0 auto;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+// search result page
+html,
+body,
+main {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+.search {
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 45vh;
+  overflow: scroll;
+  .search__item {
+    cursor: pointer;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 10fr 0.8fr;
+    .search__img {
+      width: auto;
+      min-height: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+    .search__name {
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+      padding-left: 10px;
+      h3 {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  padding: 0;
+}
+
+// login page
+.login__box {
+  font-family: $eng_font;
+  input {
+    font-family: $eng_font;
+    @apply w-full mb-3 rounded-sm py-5 font-light text-lg text-left border border-gray-600 px-5;
+    &:focus {
+      @apply outline-none border-teal-500;
+    }
+  }
+  button {
+    font-family: $eng_font;
+    background-color: $fitcuration_bg;
+    @apply text-center rounded-sm py-5 font-light text-lg w-full text-gray-800;
+  }
+}
+
+// signup page
+.form__box {
+  font-family: $eng_font;
+  @apply w-full;
+  input {
+    font-family: $eng_font;
+    @apply w-full rounded-sm py-5 font-light text-lg text-left border border-gray-600 px-5;
+    &:focus {
+      @apply outline-none border-teal-500;
+    }
+  }
+  .input__box {
+    @apply mb-3;
+    font-family: $eng_font;
+    &:focus {
+      @apply outline-none border-teal-500;
+    }
+    &.has_error {
+      input {
+        @apply bg-red-300 border-gray-600;
+        &:focus {
+          @apply border-gray-600;
+        }
+      }
+    }
+  }
+  button {
+    font-family: $eng_font;
+    background-color: $fitcuration_bg;
+    @apply text-center rounded-sm py-5 font-light text-lg w-full text-gray-800;
+  }
+}
+@tailwind utilities;

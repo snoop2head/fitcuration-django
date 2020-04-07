@@ -1,0 +1,33 @@
+{
+  "name": "fitcuration_django_ver2",
+  "version": "1.0.0",
+  "description": "FitCuration tailwind & gulp config",
+  "main": "index.js",
+  "scripts": {
+    "css": "gulp",
+    "dev": "gulp dev"
+  },
+  "repository": "git+https://github.com/snoop2head/FitCuration_django_web.git",
+  "author": "Young Jin Ahn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/snoop2head/FitCuration_django_web/issues"
+  },
+  "homepage": "https://github.com/snoop2head/FitCuration_django_web#readme",
+  "devDependencies": {
+    "auto-prefixer": "^0.4.2",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-csso": "^4.0.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.13.1",
+    "tailwindcss": "^1.2.0"
+  },
+  "dependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/register": "^7.9.0"
+  }
+}
