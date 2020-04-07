@@ -74,33 +74,8 @@ show categories of exercises for the landing page
 
 ### Map Search Result & List
 
-- [ ] 
+- [ ] Naver Map API Integration
 
 ### Fitcustomize page
 
-- [ ] 
-
-## Frontend Structure
-
-### HTML Static files
-
-- base.html
-  - partials/nav.html
-  - exercise.list.html as block content
-    - partials/exercise_cards.html
-    - partials/exercise_carousel_cards.html
-  - partials/footer.html
-
-### CSS & SCSS
-
-styles.scss -- compiled through saas -->  styles.css
-
-```shell
-npm run css
-```
-
-- styles.scss
-  - Tailwind.config.js
-
-
-
+- [ ] Personal Form
