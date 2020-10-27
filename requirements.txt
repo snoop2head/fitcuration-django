@@ -15,7 +15,7 @@ cffi==1.14.0
 chardet==3.0.4
 Click==7.0
 colorama==0.3.9
-cryptography==2.8
+cryptography==3.2
 Django==3.0.7
 django-countries==5.5
 django-dotenv==1.4.2
