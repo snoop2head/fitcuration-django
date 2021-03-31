@@ -33,7 +33,7 @@ joblib==0.14.1
 JPype1==0.7.2
 jsonschema==3.2.0
 konlpy==0.5.2
-lxml==4.5.0
+lxml==4.6.3
 numpy==1.18.1
 oauthlib==3.1.0
 pandas==1.0.1
