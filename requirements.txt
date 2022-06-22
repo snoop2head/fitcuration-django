@@ -34,7 +34,7 @@ JPype1==0.7.2
 jsonschema==3.2.0
 konlpy==0.5.2
 lxml==4.5.0
-numpy==1.18.1
+numpy==1.22.0
 oauthlib==3.1.0
 pandas==1.0.1
 paramiko==2.7.1
