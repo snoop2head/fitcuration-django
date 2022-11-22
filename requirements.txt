@@ -39,7 +39,7 @@ oauthlib==3.1.0
 pandas==1.0.1
 paramiko==2.7.1
 pathspec==0.5.9
-Pillow==7.0.0
+Pillow==9.3.0
 pipreqs==0.4.10
 pycodestyle==2.5.0
 pycparser==2.20
